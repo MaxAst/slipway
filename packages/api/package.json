@@ -1,0 +1,50 @@
+{
+  "name": "@my/api",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./services": {
+      "types": "./src/services/index.ts",
+      "default": "./dist/services/index.js"
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "type-check": "tsc --noEmit",
+    "type-check:tests": "tsc --project tsconfig.test.json",
+    "clean": "rm -rf dist .turbo node_modules && rm tsconfig.tsbuildinfo",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@my/db": "workspace:*",
+    "@oslojs/crypto": "1.0.1",
+    "@oslojs/encoding": "1.1.0",
+    "@trpc/server": "11.4.3",
+    "arctic": "3.7.0",
+    "effect": "3.16.16",
+    "fastify": "5.4.0",
+    "superjson": "2.2.2",
+    "zod": "4.0.5"
+  },
+  "devDependencies": {
+    "@fastify/cookie": "~11.0.2",
+    "@my/typescript-config": "workspace:*",
+    "msw": "~2.10.3",
+    "typescript": "~5.8.3",
+    "vite": "~7.0.0"
+  }
+}

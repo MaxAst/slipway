@@ -1,0 +1,58 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/build",
+      "!**/public",
+      "!**/coverage",
+      "!**/drizzle/meta/**",
+      "!**/.history",
+      "!**/.vscode",
+      "!**/routeTree.gen.ts",
+      "!**/payload-types.ts"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noUnusedTemplateLiteral": "off",
+        "noNonNullAssertion": "error",
+        // TODO: this is for node:fs, we should re-enable once we fixed the entryPoint issue
+        "useNodejsImportProtocol": "off",
+        "useImportType": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
+      },
+      "correctness": {
+        "useHookAtTopLevel": "error",
+        "noUnusedVariables": "warn"
+      },
+      "a11y": {
+        "useSemanticElements": "off"
+      }
+    }
+  },
+  "formatter": {
+    "lineWidth": 100,
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "quoteStyle": "single",
+      "bracketSameLine": true,
+      "trailingCommas": "es5"
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
+}

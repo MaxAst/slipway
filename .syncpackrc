@@ -1,0 +1,57 @@
+{
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol when developing local packages, won't set version to 0.0.0",
+      "dependencies": [
+        "$LOCAL"
+      ],
+      "dependencyTypes": [
+        "prod",
+        "dev"
+      ],
+      "pinVersion": "workspace:*"
+    }
+  ],
+  "semverGroups": [
+    {
+      "range": "",
+      "dependencyTypes": [
+        "prod",
+        "resolutions",
+        "overrides",
+        "pnpmOverrides",
+        "local"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    },
+    {
+      "range": "~",
+      "dependencyTypes": [
+        "dev"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    },
+    {
+      "range": "^",
+      "dependencyTypes": [
+        "peer"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    }
+  ]
+}

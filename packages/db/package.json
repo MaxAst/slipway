@@ -1,0 +1,55 @@
+{
+  "name": "@my/db",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./src/schema/index.ts",
+      "default": "./dist/schema/index.js"
+    },
+    "./service": {
+      "types": "./src/service.ts",
+      "default": "./dist/service.js"
+    },
+    "./orm": {
+      "types": "./src/orm.ts",
+      "default": "./dist/orm.js"
+    },
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "type-check": "tsc --noEmit",
+    "migration:generate": "drizzle-kit generate",
+    "migration:run": "drizzle-kit migrate",
+    "clean": "rm -rf dist .turbo node_modules && rm tsconfig.tsbuildinfo",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "seed": "npm run build && node dist/seed.js"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.44.3",
+    "effect": "3.16.16",
+    "postgres": "3.4.7",
+    "zod": "4.0.5"
+  },
+  "devDependencies": {
+    "@my/typescript-config": "workspace:*",
+    "@types/node": "~24.0.4",
+    "drizzle-kit": "~0.31.0",
+    "typescript": "~5.8.3"
+  }
+}

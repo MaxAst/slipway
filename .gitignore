@@ -1,0 +1,49 @@
+node_modules
+.turbo
+!.env
+.DS_Store
+.cache
+.vercel
+.output
+.wrangler
+.nitro
+*.tsbuildinfo
+
+/build/
+/api/
+/server/build
+/public/build
+
+# Sentry Config File
+.env.sentry-build-plugin
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+.env
+*.local
+
+# uv
+.uv/
+.venv/
+.python-version
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
